@@ -58,9 +58,11 @@
 ### 常用的版本控制系统
 
 Git:
+分布式
 
 ---
 SVN:
+集中式
 
 ---
 VSS:
@@ -75,9 +77,57 @@ CVS:
 基于Git的项目托管平台：GitHub，GitLab，码云，腾讯研发云等
 
 ## 安装Git
-[Git官方网站https://git-scm.com/](https://git-scm.com/)
-[Git官方简中教程](https://git-scm.com/book/zh/v2)
+[Git官方网站
+https://git-scm.com/](https://git-scm.com/)
 
+[Git官方简中教程
+https://git-scm.com/book/zh/v2](https://git-scm.com/book/zh/v2)
+
+## 初始化
+
+有两种方式：
+假如远程仓库地址为
+
+     https://github.com/itwhy1994/ProjectName
+
+### 在托管平台上新建代码库，然后克隆到本地
+ 
+ 在平台建立新仓库
+
+```
+// 克隆远程仓库到本地
+git clone https://github.com/itwhy1994/ProjectName
+
+// 添加文件到版本库中,‘.’代表添加目录下所有文件，也可添加指定的某文件
+git add .
+
+// 强行添加忽略文件到代码库中
+git add -f FileName
+
+// 提交修改到版本库中,引号中为注释内容
+git commit -m "comment"
+
+// 推送到远程仓库
+git push
+
+//从远程仓库更新,工作前一定记得进行更新
+git pull
+```
+
+### 本地先建立代码库，再推送到远程仓库或与远程仓库建立关联
+
+先在本地建立好代码文件夹，然后进入文件夹
+
+```
+// 初始化代码仓库
+git init
+
+// 与远程仓库关联
+git remote add origin https://github.com/itwhy1994/ProjectName
+
+//第一次推送到远程
+git push -u origin master
+```
 
 # 注意事项
 
